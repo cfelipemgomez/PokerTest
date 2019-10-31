@@ -64,9 +64,9 @@ public class Poker
             }
 
             //Resultado
-            if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con carta alta: "+Blanco);}
             
-            else {salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            else {salida=false; System.out.println("Gana Negro con carta alta: "+Negro);}
 
         }
         
@@ -99,9 +99,9 @@ public class Poker
             }
             
             //Resultado
-            if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con Par: "+Blanco);}
            
-            else if (valor1<valor2){salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            else if (valor1<valor2){salida=false; System.out.println("Gana Negro con Par: "+Negro);}
             
         }
         
@@ -138,11 +138,11 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
             //Resultado
             if(cont1==cont2)
             {
-            if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
-            else{salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con doble par: "+Blanco);}
+            else{salida=false; System.out.println("Gana Negro con doble par: "+Negro);}
             }
-            if(cont1>cont2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
-            else{salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            if(cont1>cont2){salida=true; System.out.println("Gana Blanco con doble par: "+Blanco);}
+            else{salida=false; System.out.println("Gana Negro con doble par: "+Negro);}
         }
         
         return salida;
@@ -176,14 +176,38 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
             }
     
             //Resultado
-            if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con trio: "+Blanco);}
             
-            else{salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            else{salida=false; System.out.println("Gana Negro con trio: "+Negro);}
 
         }
         
         return salida;
     };
+    
+/************************************* ESCALERA ******************************************/
+    
+    public boolean Escalera(LinkedList<Carta> m1, LinkedList<Carta> m2) {
+    	boolean salida=true;
+        if (!(m1.isEmpty() && m2.isEmpty())) {
+            int valor1=0, valor2=0;
+            
+            for (int i=0; i<4; i++)
+            {
+                if ((m1.get(i+1).valor()- m1.get(i).valor())<1)
+                    {valor1 = m1.get(i+1).valor();}
+            }
+            for (int j=0; j<4; j++)
+            {
+            	if ((m2.get(j+1).valor()- m2.get(j).valor())<1)
+                    {valor2 = m2.get(j+1).valor();}
+            }
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con escalera: "+Blanco);}
+            else{salida=false; System.out.println("Gana Negro con escalera: "+Blanco);}
+
+        }
+        return salida;
+    };    
     
 /************************************* POKER ******************************************/
 
@@ -208,9 +232,9 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
             }
             
             //Resultado
-            if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
+            if (valor1>valor2){salida=true; System.out.println("Gana Blanco con poker: "+Blanco);}
             
-            else{salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            else{salida=false; System.out.println("Gana Negro con poker: "+Negro);}
 
         }
         
@@ -245,12 +269,12 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
             //Resultado
             if (cont1==4 && cont2==4)
             {
-            	if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
+            	if (valor1>valor2){salida=true; System.out.println("Gana Blanco con color: "+Blanco);}
             
-            	else {salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            	else {salida=false; System.out.println("Gana Negro con color: "+Negro);}
             }
-            else if (cont1==4 && cont2<4) {salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
-            else if (cont1<4 && cont2==4) {salida=false; System.out.println("Gana el Negro con:"+Negro);}
+            else if (cont1==4 && cont2<4) {salida=true; System.out.println("Gana Blanco con color: "+Blanco);}
+            else if (cont1<4 && cont2==4) {salida=false; System.out.println("Gana Negro con color: "+Negro);}
         }
         
         return salida;

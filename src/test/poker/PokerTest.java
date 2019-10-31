@@ -2,14 +2,12 @@ package test.poker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.LinkedList;
-
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import main.poker.Poker;
 
-class PokerTest {
+class PokerTest 
+{
 	
 	private Poker manoPar1=new Poker("2H 3D 5S KC KD","2C 3H 4S 8C AH");
 	private Poker manoPar2=new Poker("2H 3D 5S 8C KD","2C 3H 4S AC AH");
@@ -23,6 +21,8 @@ class PokerTest {
 	private Poker manoPoker2=new Poker("2H 3D 5S 8C KD","2C 2H 2S 2D KH");
 	private Poker manoColor1=new Poker("2H 3H 5H KH 8H","2C 3H 4S 8C AH");
 	private Poker manoColor2=new Poker("2H 3D 5S 8C KD","2C 3C 4C AC AC");
+	private Poker manoEscalera1=new Poker("2H 3D 4S 5C 6D","2C 3H 4S 8C AH");
+	private Poker manoEscalera2=new Poker("2H 3D 5S 8C KD","2C 3H 4S 5C 6H");
 	@Test
 	void testpar() {
 		assertEquals(true,manoPar1.par(manoPar1.m1,manoPar1.m2));
@@ -74,5 +74,14 @@ class PokerTest {
 	@Test
 	void testcolor2() {
 		assertEquals(false,manoColor2.color(manoColor2.m1,manoColor2.m2));
+	}
+	
+	@Test
+	void testEscalera() {
+		assertEquals(true,manoEscalera1.Escalera(manoColor1.m1,manoColor1.m2));
+	}
+	@Test
+	void testEscalera2() {
+		assertEquals(false,manoEscalera2.Escalera(manoColor2.m1,manoColor2.m2));
 	}
 }
