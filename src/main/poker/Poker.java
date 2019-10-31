@@ -160,16 +160,21 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
             for (int i=0; i<4; i++)
             {
                 //Obtenemos el valor del trío de m1
-                if (m1.get(i).valor()==m1.get(i+1).valor()) {cont1++;}
-                else if (cont1==2) {valor1=m1.get(i).valor();}
-                else{cont1=0;}
-                
+                if (m1.get(i).valor()==m1.get(i+1).valor())
+                {	
+                	cont1++;
+                	if (cont1==2) {valor1=m1.get(i).valor();}
+            	}
+                else {cont1=0;}
                 //Obtenemos el valor del trío de m2
-                if (m2.get(i).valor()==m2.get(i+1).valor()) {cont2++;}
-                else if (cont2==2) {valor2=m2.get(i).valor();}
-                else{cont2=0;}
+                if (m2.get(i).valor()==m2.get(i+1).valor())
+                {
+                	cont2++;
+                	if (cont2==2) {valor2=m2.get(i).valor();}
+                }
+                else {cont2=0;}
             }
-            
+    
             //Resultado
             if (valor1>valor2){salida=true; System.out.println("Gana el Blanco con:"+Blanco);}
             
@@ -220,9 +225,8 @@ public boolean doblePar(LinkedList<Carta> m1, LinkedList<Carta> m2) {
         if (!(m1.isEmpty() && m2.isEmpty())) 
         {
             int valor1=0, valor2=0,cont1=0,cont2=0;
-            boolean sal=true;
             
-            for (int i=0; i<m1.size() && sal; i++)
+            for (int i=0; i<4; i++)
             {
             	if(m1.get(i).palo()==m1.get(i+1).palo()) {cont1++;}
             
