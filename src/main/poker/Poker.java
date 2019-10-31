@@ -10,9 +10,9 @@ public class Poker
 	public String Blanco;
 	public String Negro;
 	
-	Poker(){};
+	public Poker(){};
 	
-	Poker(String B, String N)
+	public Poker(String B, String N)
 	{
 		Blanco=B;
 		Negro=N;
@@ -43,7 +43,7 @@ public class Poker
 
 /*************************** CARTA ALTA *****************************************/	
 	
-	protected boolean cartaAlta(LinkedList<Carta> m1, LinkedList<Carta> m2) {
+	public boolean cartaAlta(LinkedList<Carta> m1, LinkedList<Carta> m2) {
         boolean salida=true;
         
         if (!(m1.isEmpty() && m2.isEmpty())) 

@@ -1,4 +1,4 @@
-package main.poker;
+package test.poker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,8 @@ import java.util.LinkedList;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+
+import main.poker.Poker;
 
 class PokerTest {
 	

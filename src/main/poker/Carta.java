@@ -5,9 +5,9 @@ public class Carta
 	 public char palo;
 	 public char valor;
 	 
-	 Carta(){};
+	 public Carta(){};
 	 
-	 Carta(char V,char P)
+	 public Carta(char V,char P)
 	 {
 		 palo=P;
 		 valor=V;
